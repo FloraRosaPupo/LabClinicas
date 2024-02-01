@@ -20,7 +20,7 @@ class SelfServiceModule extends FlutterGetItModule {
   Map<String, WidgetBuilder> get pages => {
         '/': (context) => SelfServicePage(),
         '/whoIAm': (context) => WhoIAmPage(),
-        '/find-patient': (context) => FindPatientPage(),
+        '/findPatient': (context) => FindPatientPage(),
         '/patient': (context) => PatientPage(),
         '/documents': (context) => DocumentsPage(),
         '/documents/scan': (context) => ScanPage(),

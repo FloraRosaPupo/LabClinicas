@@ -52,7 +52,6 @@ class _WhoIAmPageState extends State<WhoIAmPage> {
                   final nav = Navigator.of(context);
                   await SharedPreferences.getInstance()
                       .then((sp) => sp.clear());
-
                   nav.pushNamedAndRemoveUntil('/', (route) => false);
                 }
               },
