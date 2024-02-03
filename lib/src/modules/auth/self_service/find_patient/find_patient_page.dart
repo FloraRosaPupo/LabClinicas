@@ -11,7 +11,7 @@ class FindPatientPage extends StatefulWidget {
 
 class _FindPatientPageState extends State<FindPatientPage> {
   final formKey = GlobalKey<FormState>();
-  final cpfEC = TextEditingController();
+  final documentEC = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -58,11 +58,8 @@ class _FindPatientPageState extends State<FindPatientPage> {
                           SizedBox(
                             height: 48,
                           ),
-                          SizedBox(
-                            height: 48,
-                          ),
                           TextFormField(
-                            controller: cpfEC,
+                            controller: documentEC,
                             validator:
                                 Validatorless.required('CPF obrigatório'),
                             decoration: const InputDecoration(
@@ -71,9 +68,26 @@ class _FindPatientPageState extends State<FindPatientPage> {
                               ),
                             ),
                           ),
-
-                          SizedBox(
-                            height: 24,
+                          Row(
+                            children: [
+                              const Text('Não sabe o CPF do paciente',
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400,
+                                      color: LabClinicasTheme.blueColor)),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              TextButton(
+                                  onPressed: () {},
+                                  child: const Text(
+                                    'Clique aqui',
+                                    style: TextStyle(
+                                      color: LabClinicasTheme.orageColor,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  )),
+                            ],
                           ),
                           SizedBox(
                             width: sizeOf.width * 0.8,
@@ -82,8 +96,6 @@ class _FindPatientPageState extends State<FindPatientPage> {
                                 onPressed: () {
                                   final valid =
                                       formKey.currentState?.validate() ?? false;
-
-                                
                                 },
                                 child: Text('CONTINUAR')),
                           )
